@@ -1,0 +1,21 @@
+<html>
+<script>
+
+function myFunction() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("my-demo").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "https://z8u8948dok.execute-api.us-east-1.amazonaws.com/Prod/MyLambdaFunction", true);
+    xhttp.send();
+
+}
+
+</script>
+<body><div align="center"><br><br><br><br>
+<h1>Hello <span id="my-demo">Awesome! This works!</span></h1>
+<button onclick="myFunction()">Click me</button><br>
+</body>
+</html>
